@@ -1,0 +1,15 @@
+#Se compone principalmente de servicios
+
+services:
+  example_one:
+    image: python
+    container_name: example_one
+  
+  #Utiliza dockerfile
+  example_two:
+    #El dockerfile esta en el mismo directorio, entonces se usa ".", build siempre buscara un archivo dockerfile por defecto
+    build: .
+    container_name: example_two
+    ports:
+    #El de la izquierda es el host, el de la derecha es el anfitrión
+    - "5010:5010"
